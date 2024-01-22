@@ -38,6 +38,27 @@ def merge_sorted_arrays_ap2(nums1, nums2):
     print(nums1, nums2)
 
 
+def merge_sorted_arrays_ap3(nums1, nums2, n ,m):
+    ln = n + m
+    gap = (ln // 2) + (ln % 2)
+    while gap > 0:
+        left = 0
+        right = left + gap
+        while right < ln:
+            if left < n <= right:
+                nums1[left], nums2[right - n] = nums2[right - n], nums1[left]
+            elif left >= n:
+                nums2[left - n], nums2[right - n] = nums2[right - n], nums2[
+                    left - n]
+            else:
+                nums1[left], nums1[right] = nums1[right], nums1[left]
+            left += 1
+            right += 1
+        if gap == 1: break
+        gap = (gap // 2) + (gap % 2)
+    return nums1, nums2
+
+
 if __name__ == '__main__':
     nums1, nums2 = [1, 3, 5, 7], [0, 2, 6, 8, 9]
-    merge_sorted_arrays_ap2(nums1, nums2)
+    print(merge_sorted_arrays_ap3(nums1, nums2, len(nums1), len(nums2)))
