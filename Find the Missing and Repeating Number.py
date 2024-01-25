@@ -43,7 +43,39 @@ def ap3(nums, n):
 
 
 def ap4(nums, n):
-    pass
+    xr = 0
+    for i in range(len(nums)):
+        xr ^= nums[i]
+        xr ^= i + 1
+    bit_no = 0
+    while 1:
+        if xr and (1 << bit_no) != 0:
+            break
+        bit_no += 1
+    zero = 0
+    one = 0
+    for i in range(len(nums)):
+        # part of 1 club
+        if (nums[i] and (1 << bit_no)) != 0:
+            one ^= nums[i]
+        # part of 0 club
+        else:
+            zero ^= nums[i]
+    for i in range(len(nums)):
+        # part of 1 club
+        if (i and (1 << bit_no)) != 0:
+            one ^= i
+        # part of 0 club
+        else:
+            zero ^= i
+    count = 0
+    for i in nums:
+        if i == zero:
+            count += 1
+    if count == 2:
+        return zero, one
+    else:
+        return one, zero
 
 
 if __name__ == '__main__':
@@ -51,3 +83,4 @@ if __name__ == '__main__':
     print(ap1(nums, n))
     print(ap2(nums, n))
     print(ap3(nums, n))
+    print(ap4(nums, n))
