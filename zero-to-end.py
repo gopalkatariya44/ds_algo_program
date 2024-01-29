@@ -13,3 +13,4 @@ def zero_to_end(lst):
 
 if __name__ == '__main__':
     zero_to_end([1, 4, 1, 0, 0, 1, 3, 4, 10, 0, 5, 3, 0, 1, 2, 0])
+    zero_to_end([2, 1])
