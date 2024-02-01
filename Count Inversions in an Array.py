@@ -8,6 +8,10 @@ def ap1(nums):
     return len(ans)
 
 
+def ap2(nums):
+    pass
+
+
 if __name__ == '__main__':
     nums = [5, 3, 2, 4, 1]
     print(ap1(nums))
