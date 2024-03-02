@@ -38,6 +38,11 @@ def palindrome(i, s, n):
 
 
 def fn(n):
+    """
+    Time Complexity : O(2^n)
+    :param n:
+    :return:
+    """
     if n <= 1:
         return n
     else:
@@ -152,7 +157,7 @@ def insertion_sort(array):
 if __name__ == '__main__':
     # insertion_sort([111, 1, 0, 4, 6, -8, 3])
     # print(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]))
-    print(fn(3))
+    print(fn(5))
 
 # Input: height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
 # Output: 49

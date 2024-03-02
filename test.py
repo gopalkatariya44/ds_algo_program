@@ -29,15 +29,15 @@ class Test(Parent):
 
 
 if __name__ == '__main__':
-    # test = Test()
-    # test()
-    s = Solution()
+    n = 10
+    while True:
+        ls = [int(i) for i in str(n)]
+        print(ls)
 
-    print(s.multiply("22", "33"))
-    n1 = 0
-    for i in "123456789":
-        print(n1*10)
-        print(n1*10 + ord(i)-48)
-        n1 = n1*10 + ord(i)-48
-    print(n1)
+        n = sum(ls)
 
+        if n < 10:
+            print(n)
+            break
+
+    print("syntext error")
