@@ -12,6 +12,7 @@ class Solution:
 
         return f"{n1 * n2}"
 
+
 class Parent():
     def __call__(self, *args, **kwargs):
         print("hey")
@@ -29,15 +30,29 @@ class Test(Parent):
 
 
 if __name__ == '__main__':
-    n = 10
-    while True:
-        ls = [int(i) for i in str(n)]
-        print(ls)
+    board = [["5", "3", ".", ".", "7", ".", ".", ".", "."],
+             ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+             [".", "9", "8", ".", ".", ".", ".", "6", "."],
+             ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+             ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+             ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+             [".", "6", ".", ".", ".", ".", "2", "8", "."],
+             [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+             [".", ".", ".", ".", "8", ".", ".", "7", "9"]]
 
-        n = sum(ls)
 
-        if n < 10:
-            print(n)
-            break
+    def isValidSudoku(board):
+        res = []
+        for i in range(9):
+            for j in range(9):
+                element = board[i][j]
+                if element != '.':
+                    print([(i, element), (element, j), (i // 3, j // 3, element)])
+                    print(res)
+                    res += [(i, element), (element, j), (i // 3, j // 3, element)]
+                    print(res)
+        return len(res) == len(set(res))
 
-    print("syntext error")
+    isValidSudoku(board)
+
+
