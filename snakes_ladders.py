@@ -34,12 +34,12 @@ def print_matrix(matrix, col, row):
 
 
 def start_game():
-    players = 2
-    boards = 10
-    # matrix: list = [[0] * boards] * boards
-    matrix: list = [
-        [0, 0, 0, 0, 0, 0],
-    ]
+    players = 4
+    boards = 6
+    matrix: list = [[0] * boards] * boards
+    # matrix: list = [
+    #     [0, 0, 0, 0, 0, 0],
+    # ]
 
     row: list = [0] * players
     col: list = [0] * players
